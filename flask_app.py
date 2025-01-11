@@ -4,6 +4,8 @@ import json
 import threading
 import time
 from ultralytics import YOLO
+from datetime import datetime
+import pytz
 
 app = Flask(__name__)
 
@@ -14,11 +16,14 @@ plate_model = YOLO("plate_v11.pt")
 character_model = YOLO("best_Sep.pt")
 
 # Initialize the video capture object
-video_stream = cv2.VideoCapture(0)  # Use 0 for webcam or provide video file path
+video_stream = cv2.VideoCapture(1)  # Use 0 for webcam or provide video file path
 
 # Shared list to store detected number plates
 detected_plates = []
 detected_plates_lock = threading.Lock()  # Lock for thread-safe access
+
+# Nepal Timezone
+nepal_tz = pytz.timezone('Asia/Kathmandu')
 
 def save_detected_plates_to_json():
     """
@@ -66,9 +71,15 @@ def detect_and_recognize_number_plate(frame):
                 recognized_text = recognize_characters(plate_img)
                 label += f" [{recognized_text}]"
 
-                # Save the recognized text
+                # Save the recognized text with timestamp
                 with detected_plates_lock:
-                    detected_plates.append({"plate": recognized_text, "timestamp": time.time()})
+                    timestamp = time.time()
+                    timestamp_readable = datetime.fromtimestamp(timestamp, tz=pytz.utc).astimezone(nepal_tz).strftime('%Y-%m-%d %H:%M:%S')
+                    detected_plates.append({
+                        "plate": recognized_text, 
+                        "timestamp": timestamp,
+                        "timestamp_readable": timestamp_readable
+                    })
 
             # Draw bounding box and label on the frame
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
@@ -94,7 +105,10 @@ def generate_frames():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    with detected_plates_lock:
+        # Passing detected plates to the HTML template
+        plates_data = detected_plates[-5:]  # Show the last 5 plates
+    return render_template('index.html', plates=plates_data)
 
 @app.route('/video_feed')
 def video_feed():

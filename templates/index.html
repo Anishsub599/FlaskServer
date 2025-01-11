@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Plate Detection</title>
-    <link rel="stylesheet" href="/static/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plate Recognizer</title>
+  <link rel="stylesheet" href="\static\styles.css">
 </head>
 <body>
-    <h1>Number Plate Detection</h1>
-    <div id="video-container">
-        <img src="{{ url_for('video_feed') }}" alt="Video Stream" id="video">
+  <header>
+    <h1>Automatic License Plate Recognition</h1>
+    <p>Accurate, Fast, Developer-Friendly ALPR</p>
+  </header>
+
+  <section class="intro">
+    <div>
+      <h2>Try It Out</h2>
+      <!-- Video Feed Container -->
+<div class="video-container">
+    <img src="{{ url_for('video_feed') }}" alt="Video Feed">
+  </div>
     </div>
-    
-    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  </section>
+
+  <section class="features">
+    <h2>Feature-Rich ALPR</h2>
+    <ul>
+      <li>Works on blurry images</li>
+      <li>Works when plates are angled</li>
+      <li>Works in dark environments</li>
+      <li>Works on low-res images</li>
+      <li>Supports multiple vehicles</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Plate Recognizer - ALPR Engine for All Countries</p>
+  </footer>
 </body>
 </html>

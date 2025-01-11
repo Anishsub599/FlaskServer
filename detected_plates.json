@@ -1,62 +1,32 @@
 [
     {
-        "plate": "191ba9",
-        "timestamp": 1736582116.0346444
+        "plate": "3332",
+        "timestamp": 1736614056.0465286,
+        "timestamp_readable": "2025-01-11 22:32:36"
     },
     {
-        "plate": "54333",
-        "timestamp": 1736582116.0992103
+        "plate": "33",
+        "timestamp": 1736614058.7935872,
+        "timestamp_readable": "2025-01-11 22:32:38"
     },
     {
-        "plate": "",
-        "timestamp": 1736582116.261039
+        "plate": "140616cha",
+        "timestamp": 1736614059.2307591,
+        "timestamp_readable": "2025-01-11 22:32:39"
     },
     {
-        "plate": "",
-        "timestamp": 1736582116.3918254
+        "plate": "0461604cha",
+        "timestamp": 1736614062.1919372,
+        "timestamp_readable": "2025-01-11 22:32:42"
     },
     {
-        "plate": "343ba5",
-        "timestamp": 1736582116.4363995
+        "plate": "4061016pacha6",
+        "timestamp": 1736614062.5070682,
+        "timestamp_readable": "2025-01-11 22:32:42"
     },
     {
-        "plate": "cha",
-        "timestamp": 1736582116.581002
-    },
-    {
-        "plate": "54736ba3",
-        "timestamp": 1736582116.6309552
-    },
-    {
-        "plate": "",
-        "timestamp": 1736582116.8011777
-    },
-    {
-        "plate": "0081cha2ba",
-        "timestamp": 1736582116.9398522
-    },
-    {
-        "plate": "88",
-        "timestamp": 1736582117.081355
-    },
-    {
-        "plate": "534623",
-        "timestamp": 1736582117.1243482
-    },
-    {
-        "plate": "",
-        "timestamp": 1736582117.251997
-    },
-    {
-        "plate": "",
-        "timestamp": 1736582117.4097664
-    },
-    {
-        "plate": "",
-        "timestamp": 1736582117.5411117
-    },
-    {
-        "plate": "2432",
-        "timestamp": 1736582117.5871758
+        "plate": "64041pa104",
+        "timestamp": 1736614062.6745973,
+        "timestamp_readable": "2025-01-11 22:32:42"
     }
 ]
